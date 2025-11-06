@@ -7,13 +7,13 @@ ENV PYTHONUNBUFFERED=1
 ENV PIP_PROGRESS_BAR=on
 
 # Install system dependencies
-# RUN apt-get update && apt-get install -y \
-#     build-essential \
-#     libglib2.0-0 \
-#     libsm6 \
-#     libxrender-dev \
-#     libxext6 \
-#     && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libglib2.0-0 \
+    libsm6 \
+    libxrender-dev \
+    libxext6 \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
@@ -44,3 +44,4 @@ EXPOSE 5000
 
 # Command to run Flask app
 CMD ["python", "app.py"]
+
