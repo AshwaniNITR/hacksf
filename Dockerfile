@@ -25,15 +25,15 @@ COPY . /app
 RUN pip install --upgrade pip
 
 # Install only CPU version of PyTorch and related libraries (with progress)
-RUN pip install \
-    torch==2.3.0+cpu \
-    torchvision==0.18.0+cpu \
-    torchaudio==2.3.0+cpu \
-    --index-url https://download.pytorch.org/whl/cpu
+# RUN pip install \
+#     torch==2.3.0+cpu \
+#     torchvision==0.18.0+cpu \
+#     torchaudio==2.3.0+cpu \
+#     --index-url https://download.pytorch.org/whl/cpu
 
-# Install facenet-pytorch and other core dependencies
-RUN pip install \
-    facenet-pytorch 
+# # Install facenet-pytorch and other core dependencies
+# RUN pip install \
+#     facenet-pytorch 
 
 # Copy and install remaining requirements (optional)
 COPY requirements.txt .
@@ -44,4 +44,5 @@ EXPOSE 5000
 
 # Command to run Flask app
 CMD ["python", "app.py"]
+
 
