@@ -4,6 +4,6 @@ torch
 torchvision
 pillow
 numpy
-
 flask-cors
 gunicorn
+
